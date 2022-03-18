@@ -1,26 +1,43 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import tw from 'twin.macro'
+import styled, { ThemeProvider } from 'styled-components'
+import { Route, Routes } from 'react-router-dom'
+
+import './App.css'
+import { darkTheme, lightTheme } from './components/ThemeState/ThemeState'
+
+// Pages Component
+import {
+  MainPage,
+  AboutPage,
+  SkillPage,
+  BlogPage,
+  WorkPage,
+} from './pages/index'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <ThemeProvider theme={lightTheme}>
+      <MainContainer className="App">
+        <Routes>
+          <Route path="/" element={<MainPage />} />
+
+          <Route path="/about" element={<AboutPage />} />
+
+          <Route path="/skill" element={<SkillPage />} />
+
+          <Route path="/blog" element={<BlogPage />} />
+
+          <Route path="/project" element={<WorkPage />} />
+        </Routes>
+      </MainContainer>
+    </ThemeProvider>
+  )
 }
 
-export default App;
+const MainContainer = styled.div`
+  ${tw`
+    w-screen
+  `}
+`
+
+export default App
