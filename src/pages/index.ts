@@ -1,0 +1,5 @@
+export { default as MainPage } from './MainPage/MainPage'
+export { default as AboutPage } from './AboutPage/AboutPage'
+export { default as SkillPage } from './SkillPage/SkillPage'
+export { default as BlogPage } from './BlogPage/BlogPage'
+export { default as WorkPage } from './WorkPage/WorkPage'
