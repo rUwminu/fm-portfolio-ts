@@ -26,9 +26,10 @@ const PowerBtnContainer = styled(Link)`
     h-10
     bg-white
     border-2
-  border-gray-700
+    border-gray-700
     rounded-full
     cursor-pointer
+    z-20
 
     transition
     duration-200
